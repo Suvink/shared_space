@@ -96,7 +96,7 @@ public class LoginController implements Initializable {
             stage.setTitle("SignUp");
             stage.setScene(new Scene(root));
             stage.show();
-            
+            // Close existing window
             Stage stage1 = (Stage) gotoSignUpLabel.getScene().getWindow();
             stage1.hide();
         } catch (Exception e) {

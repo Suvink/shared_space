@@ -83,7 +83,6 @@ public class SignUpController implements Initializable {
             Class.forName("java.sql.Driver");
             con = DriverManager.getConnection(db_host, db_username, db_password);
             Statement stmt = con.createStatement();
-            //String sql = "SELECT * from users WHERE email='" + txtEmail.getText().toString() + "'";
             String sql = "INSERT INTO users(first_name, last_name, email, password, profile_pic) VALUES ('" + txt_f_name.getText() + "' ,'" + txt_l_name.getText() + "' , '" + txt_email.getText() + "', '" + txt_password.getText() + "', '" + txt_pro_pic.getText() + "')";
             stmt.executeUpdate(sql);
             ShowMessage("Successfully Added!", "Success");
@@ -95,7 +94,8 @@ public class SignUpController implements Initializable {
                 stage.setTitle("Login");
                 stage.setScene(new Scene(root));
                 stage.show();
-
+                
+                //Close existing window
                 Stage stage1 = (Stage) btnSignup.getScene().getWindow();
                 stage1.hide();
             } catch (Exception e) {
