@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shared_space.LoginController">
+    <children>
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="150.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="215.0" layoutY="159.0" text="Login">
+         <font>
+            <Font name="Product Sans" size="29.0" />
+         </font>
+      </Label>
+      <JFXTextField focusColor="#76d1e3" layoutX="131.0" layoutY="237.0" prefHeight="27.0" prefWidth="238.0" promptText="Your Email Here..." style="-fx-background-radius: 10px;">
+         <font>
+            <Font name="Product Sans" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField layoutX="131.0" layoutY="281.0" prefHeight="27.0" prefWidth="238.0" promptText="Your Password Here..." style="-fx-background-radius: 10px;" />
+      <JFXButton fx:id="btnlogin" alignment="CENTER" buttonType="RAISED" layoutX="193.0" layoutY="339.0" onAction="#handleLogin" prefHeight="27.0" prefWidth="114.0" style="-fx-background-color: #f05c63;" text="Login" textFill="WHITE" />
+    </children>
+</AnchorPane>

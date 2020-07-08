@@ -8,7 +8,8 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="shared_space.jar" size="3085" download="eager" />
+    <jar href="lib/jfoenix-8.0.10.jar" size="2710207" download="eager" />
+    <jar href="shared_space.jar" size="13627" download="eager" />
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="shared_space.Shared_space"  name="shared_space" />
   <update check="always"/>
