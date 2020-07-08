@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="txt" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shared_space.SignUpController">
+   <children>
+      <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="150.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="202.0" layoutY="160.0" text="Sign Up">
+         <font>
+            <Font name="Product Sans" size="29.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txt_email" focusColor="#76d1e3" layoutX="86.0" layoutY="300.0" prefHeight="28.0" prefWidth="328.0" promptText="Email Address" style="-fx-background-radius: 10px;">
+         <font>
+            <Font name="Product Sans" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnSignup" alignment="CENTER" buttonType="RAISED" layoutX="192.0" layoutY="469.0" onAction="#handleSignUp" prefHeight="27.0" prefWidth="114.0" style="-fx-background-color: #f05c63;" text="SignUp" textFill="WHITE" />
+      <JFXTextField fx:id="txt_f_name" layoutX="86.0" layoutY="251.0" prefHeight="27.0" prefWidth="152.0" promptText="First Name" />
+      <JFXTextField fx:id="txt_l_name" layoutX="263.0" layoutY="251.0" prefHeight="27.0" prefWidth="152.0" promptText="Last Name" />
+      <JFXTextField fx:id="txt_pro_pic" focusColor="#76d1e3" layoutX="86.0" layoutY="355.0" prefHeight="28.0" prefWidth="328.0" promptText="Profile Picture URL" style="-fx-background-radius: 10px;">
+         <font>
+            <Font name="Product Sans" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="txt_password" layoutX="86.0" layoutY="409.0" promptText="Password" />
+      <JFXPasswordField fx:id="txt_conf_password" layoutX="260.0" layoutY="409.0" prefHeight="27.0" prefWidth="150.0" promptText="Confirm Password" />
+   </children>
+</AnchorPane>
