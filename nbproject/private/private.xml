@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/suvinnimnaka/Desktop/RAD/group_project/shared_space/src/shared_space/shared_space/Shared_space.java</file>
             <file>file:/Users/suvinnimnaka/Desktop/RAD/group_project/shared_space/src/shared_space/shared_space/LoginController.java</file>
+            <file>file:/Users/suvinnimnaka/Desktop/RAD/group_project/shared_space/src/shared_space/shared_space/SignUp.fxml</file>
+            <file>file:/Users/suvinnimnaka/Desktop/RAD/group_project/shared_space/src/shared_space/shared_space/HomePage.fxml</file>
             <file>file:/Users/suvinnimnaka/Desktop/RAD/group_project/shared_space/src/shared_space/shared_space/Login.fxml</file>
+            <file>file:/Users/suvinnimnaka/Desktop/RAD/group_project/shared_space/src/shared_space/shared_space/SignUpController.java</file>
+            <file>file:/Users/suvinnimnaka/Desktop/RAD/group_project/shared_space/src/shared_space/shared_space/HomePageController.java</file>
         </group>
     </open-files>
 </project-private>

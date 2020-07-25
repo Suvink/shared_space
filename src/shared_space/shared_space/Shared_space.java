@@ -26,6 +26,7 @@ public class Shared_space extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
         stage.setScene(new Scene(root));
+        stage.setTitle("Login");
         stage.show();
     }
 

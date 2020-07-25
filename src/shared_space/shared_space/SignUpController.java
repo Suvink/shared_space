@@ -44,6 +44,7 @@ public class SignUpController implements Initializable {
     private TextField txt_conf_password;
     @FXML
     private com.jfoenix.controls.JFXButton btnSignup;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -94,7 +95,7 @@ public class SignUpController implements Initializable {
                 stage.setTitle("Login");
                 stage.setScene(new Scene(root));
                 stage.show();
-                
+
                 //Close existing window
                 Stage stage1 = (Stage) btnSignup.getScene().getWindow();
                 stage1.hide();

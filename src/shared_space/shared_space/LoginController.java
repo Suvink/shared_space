@@ -33,6 +33,8 @@ public class LoginController implements Initializable {
     private TextField txtPassword;
     @FXML
     private javafx.scene.control.Label gotoSignUpLabel;
+    @FXML
+    private com.jfoenix.controls.JFXButton btnlogin;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -49,7 +51,7 @@ public class LoginController implements Initializable {
         });
     }
 
-    public void handleLogin() throws SQLException, ClassNotFoundException {
+    public void handleLogin() throws SQLException, ClassNotFoundException, IOException {
 
         if (txtEmail.getText().equals("") || txtPassword.getText().equals("")) {
             ShowMessage("Username or Password cannot be blank!", "Error");
@@ -74,7 +76,8 @@ public class LoginController implements Initializable {
             while (rs.next()) {
                 if (rs.getString("email").equals(txtEmail.getText()) && rs.getString("password").equals(txtPassword.getText())) {
                     System.out.println("Correct");
-                    ShowMessage("Correct", "Success");
+                    //ShowMessage("Correct", "Success");
+                    this.gotoHome();
                 } else {
                     ShowMessage("Username or Password is invalid!", "Error");
                 }
@@ -102,6 +105,19 @@ public class LoginController implements Initializable {
         } catch (Exception e) {
             System.out.println(e);
         }
+    }
+
+    public void gotoHome() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HomePage.fxml"));
+        Parent root = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setTitle("Shared Space");
+        stage.setScene(new Scene(root));
+        stage.show();
+
+        // Close existing window
+        Stage stage1 = (Stage) btnlogin.getScene().getWindow();
+        stage1.hide();
     }
 
 }

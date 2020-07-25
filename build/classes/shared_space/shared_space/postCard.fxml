@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<fx:root type="javafx.scene.layout.Pane" xmlns:fx="http://javafx.com/fxml">
+    <Pane prefHeight="271.0" style="-fx-background-color: #ffffff;">
+        <children>
+            <Label fx:id="imgbox" layoutX="40.0" layoutY="12.0" prefHeight="232.0" prefWidth="258.0" style="-fx-background-image: url(&quot;https://media-cdn.tripadvisor.com/media/photo-s/07/59/da/3e/dong-hua-men-night-market.jpg&quot;); -fx-border-radius: 20; -fx-background-size: cover; -fx-shape: &quot;M0 13 C0 5 5 0 13 0 L86 0 C94 0 99 5 99 13 L99 86 C99 94 94 99 86 99 L13 99 C5 99 0 94 0 86Z&quot;; -fx-background-color: transparent;" />
+            <Label fx:id="titlebox" layoutX="343.0" layoutY="37.0" text="Best Street Foods of Macau">
+                <font>
+                    <Font name="Product Sans" size="36.0" />
+                </font>
+            </Label>
+            <Label fx:id="bodybox" layoutX="344.0" layoutY="99.0" prefHeight="143.0" prefWidth="547.0" text="Whilst I’m a true lover of street food, it is fair to say that the street food of the world knows many different forms. In fact interesting can often trump quality and indeed cleanliness, but not where Macau is concerned, in Macau street food and fine dining are one and the same.Macau street foods are so good that for the first time ever in 2016 the Michelin Food and Dining Guide (yes that Michelin) included 12 street food vendors for the first time ever in 2016, all from Hong Kong and Macao." textAlignment="JUSTIFY" wrapText="true" />
+            <Label fx:id="authorbox" layoutX="341.0" layoutY="82.0" text="Gareth The Food Guy">
+                <font>
+                    <Font name="Product Sans" size="18.0" />
+                </font>
+            </Label>
+            <Line endX="520.0" layoutX="381.0" layoutY="267.0" startX="-350.0" stroke="#b2adad" />
+        </children>
+    </Pane>
+</fx:root>
