@@ -5,6 +5,7 @@
  */
 package shared_space;
 
+import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
@@ -12,8 +13,12 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -24,6 +29,12 @@ public class HomePageController implements Initializable {
 
     @FXML
     private VBox postVbox;
+    
+    @FXML
+    private JFXButton btnAdd;
+    
+    @FXML
+    private JFXButton btnLogout;
 
     /**
      * Initializes the controller class.
@@ -65,6 +76,44 @@ public class HomePageController implements Initializable {
         } finally {
             con.close();
         }
+    }
+    
+    @FXML
+    public void gotoAddPost(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddPost.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("SignUp");
+            stage.setScene(new Scene(root));
+            stage.show();
+            // Close existing window
+            Stage stage1 = (Stage) btnAdd.getScene().getWindow();
+            stage1.hide();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+        
+        
+    }
+    
+    @FXML
+    public void logout() {
+           try {                
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Login.fxml"));
+                Parent root = (Parent) fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setTitle("Login");
+                stage.setScene(new Scene(root));
+                stage.show();
+                
+                //Close existing window
+                Stage stage1 = (Stage) btnLogout.getScene().getWindow();
+                stage1.hide();
+                
+            }catch (IOException e) {
+                System.out.println(e);
+            }
     }
 
     @Override

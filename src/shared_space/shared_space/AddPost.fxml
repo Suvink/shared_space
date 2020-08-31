@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1400.0" scaleShape="false" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shared_space.AddPostController">
+    <children>
+        <Label fx:id="lblUserPicture" layoutX="1114.0" layoutY="17.0" maxHeight="43.0" maxWidth="43.0" prefHeight="43.0" prefWidth="43.0" style="-fx-background-image: url(&quot;https://avatars0.githubusercontent.com/u/10671497?s=460&amp;u=2688fb382fbc91bc1874b4e233e6e58191d017c9&amp;v=4&quot;); -fx-background-size: cover; -fx-border-radius: 5px; -fx-background-radius: 50 50 50 50; -fx-background-repeat: no-repeat; -fx-border-color: black; -fx-shape: &quot;M0 13 C0 5 5 0 13 0 L86 0 C94 0 99 5 99 13 L99 86 C99 94 94 99 86 99 L13 99 C5 99 0 94 0 86Z&quot;; -fx-background-radius: 10px;" />
+        <Label fx:id="lblUsername" layoutX="1171.0" layoutY="30.0" text="Suvin Nimnaka">
+            <font>
+                <Font name="Product Sans" size="14.0" />
+            </font>
+        </Label>
+        <JFXButton fx:id="btnLogout" layoutX="1307.0" layoutY="25.0" onMouseClicked="#logout" style="-fx-background-color: #f05c63;" text="Logout" textFill="WHITE">
+            <font>
+                <Font name="Product Sans" size="13.0" />
+            </font>
+        </JFXButton>
+        <Line endX="800.0" layoutX="552.0" layoutY="74.0" startX="-500.0" stroke="#b2b1b1" />
+        <Label layoutX="31.0" layoutY="236.0" prefHeight="23.0" prefWidth="129.0" text="Our Sponsors">
+            <font>
+                <Font name="Product Sans" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="409.0" layoutY="14.0" text="Welcome to Shared Space!">
+            <font>
+                <Font name="Product Sans" size="40.0" />
+            </font>
+        </Label>
+        <Label layoutX="27.0" layoutY="109.0" prefHeight="23.0" prefWidth="158.0" text="Popular Hashtags">
+            <font>
+                <Font name="Product Sans" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="61.0" layoutY="142.0" prefHeight="23.0" prefWidth="158.0" text="#StreetFood">
+            <font>
+                <Font name="Product Sans" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="60.0" layoutY="164.0" prefHeight="23.0" prefWidth="158.0" text="#SriLanka">
+            <font>
+                <Font name="Product Sans" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="60.0" layoutY="187.0" prefHeight="23.0" prefWidth="158.0" text="#BlackLivesMatter">
+            <font>
+                <Font name="Product Sans" size="18.0" />
+            </font>
+        </Label>
+      <ScrollPane layoutX="214.0" layoutY="88.0">
+         <content>
+            <AnchorPane prefHeight="701.0" prefWidth="972.0" style="-fx-background-color: #F0F0F0;">
+               <children>
+                  <JFXButton fx:id="Submit" layoutX="692.0" layoutY="653.0" onAction="#Submit" prefHeight="34.0" prefWidth="93.0" style="-fx-background-color: #B4B4B4;" text="Submit">
+                     <font>
+                        <Font name="Bell MT" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="Cancel" layoutX="827.0" layoutY="653.0" onAction="#Reset" prefHeight="27.0" prefWidth="93.0" style="-fx-background-color: #B4B4B4;" text="Cancel">
+                     <font>
+                        <Font name="Bell MT" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXTextArea fx:id="content" focusColor="#405aa800" layoutX="70.0" layoutY="354.0" prefHeight="266.0" prefWidth="850.0" promptText="Write your blog here" style="-fx-background-color: #FFFFFF;" unFocusColor="#9c2f2f00">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXTextArea>
+                  <JFXTextField fx:id="title" focusColor="#405aa800" layoutX="70.0" layoutY="232.0" prefHeight="37.0" prefWidth="850.0" promptText="Title" style="-fx-background-color: #FFFFFF;" unFocusColor="#4d4d4d00">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </JFXTextField>
+                  <ImageView fx:id="addimage" fitHeight="200.0" fitWidth="205.0" layoutX="393.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/add-button-with-plus-symbol-in-a-black-circle.png" />
+                     </image></ImageView>
+                  <Label fx:id="addlab" alignment="CENTER" contentDisplay="CENTER" layoutX="391.0" layoutY="16.0" onMouseClicked="#addpo" prefHeight="208.0" prefWidth="209.0">
+                     <font>
+                        <Font size="96.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="Author" focusColor="#405aa800" layoutX="70.0" layoutY="290.0" prefHeight="37.0" prefWidth="850.0" promptText="Author" style="-fx-background-color: #FFFFFF;" unFocusColor="#4d4d4d00">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+    </children>
+</AnchorPane>
