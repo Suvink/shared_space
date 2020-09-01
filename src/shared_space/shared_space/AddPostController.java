@@ -42,6 +42,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
+
 /**
  * FXML Controller class
  *
@@ -69,31 +70,29 @@ public class AddPostController implements Initializable {
     private JFXButton add;
 
     private FileInputStream fis;
-
+    
      @FXML
     private JFXTextField Author;
-
+    
     @FXML
     private Label addlab;
-
+    
     private String img_url;
-
-
-
+    
+   
+    
     /**
      * Initializes the controller class.
-     * @param url
-     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     } 
-
-
+    
+  
     @FXML
     private void Reset() {
-
+        
         try {                
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HomePage.fxml"));
                 Parent root = (Parent) fxmlLoader.load();
@@ -101,7 +100,7 @@ public class AddPostController implements Initializable {
                 stage.setTitle("Homepage");
                 stage.setScene(new Scene(root));
                 stage.show();
-
+                
                 //Close existing window
                 Stage stage1 = (Stage) Cancel.getScene().getWindow();
                 stage1.hide();
@@ -109,10 +108,10 @@ public class AddPostController implements Initializable {
                 System.out.println(e);
                 }
     }
-
+   
      @FXML
     public void addpo() throws MalformedURLException, FileNotFoundException {
-
+         
         FileChooser fc=new FileChooser();
         fc.setTitle("Select Image File");
        // fc.setInitialDirectory(new File("C:\\Users\\Kirulu\\OneDrive\\Desktop\\RAD project\\Login\\src\\login\\images"));
@@ -120,14 +119,14 @@ public class AddPostController implements Initializable {
         new FileChooser.ExtensionFilter("Image Files","*.png","*.jpg","*.gif")
         );
         File selectedFile = fc.showOpenDialog(null);
-
+        
         if(selectedFile!=null){
-
+           
             String imagepath = selectedFile.toURI().toURL().toString();
             Image image=new Image(imagepath, 205, 200, true, true);
             addimage.setImage(image);
             this.img_url = imagepath;
-
+            
         }else{
             JOptionPane.showMessageDialog(null, "Image not found" , "Error", JOptionPane.ERROR_MESSAGE );
         }
@@ -135,39 +134,42 @@ public class AddPostController implements Initializable {
 
     @FXML
     public void Submit()throws ClassNotFoundException, IOException, SQLException, ParseException {
-
+        
+        
         if(title.getText().isEmpty() || content.getText().isEmpty()||Author.getText().isEmpty()){
-
+          
             JOptionPane.showMessageDialog(null, "You haven't add any posts" , "Error", JOptionPane.ERROR_MESSAGE );
-
+            
         }
-
+        
         else{
         String head = title.getText();
         String body = content.getText();
         String author = Author.getText();
-
+       
         String pattern = "MM/dd/yyyy HH:mm:ss";
         DateFormat df = new SimpleDateFormat(pattern);
-        java.util.Date today;   
-            today = Calendar.getInstance().getTime();
+        Date today = Calendar.getInstance().getTime();   
         String todayAsString = df.format(today);
         String img_urls = this.img_url;
-
+        System.out.println("Img url");
+        
         //Database Connectivity
             String DB_URL = "jdbc:mysql://localhost:3306/shared_space";
             String USER = "root";
             String PASS = "";
             Connection conn = null;
-
+            
             try{     
                 Class.forName("com.mysql.jdbc.Driver");
                 conn = DriverManager.getConnection(DB_URL, USER, PASS);
+                System.out.println("DBcon");
                 Statement stmt = conn.createStatement();
                 String sql="INSERT INTO posts(author,title,body,img_url,timestamp) VALUES('"+author+"','"+head+"','"+body+"','"+img_urls+"','"+todayAsString+"')";
+                System.out.println(sql);
                 stmt.executeUpdate(sql); 
                 System.out.println("Added");
-
+                
             try {                
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HomePage.fxml"));
                 Parent root = (Parent) fxmlLoader.load();
@@ -175,24 +177,24 @@ public class AddPostController implements Initializable {
                 stage.setTitle("Homepage");
                 stage.setScene(new Scene(root));
                 stage.show();
-
+                
                 //Close existing window
                 Stage stage1 = (Stage) Submit.getScene().getWindow();
                 stage1.hide();
-
+                
             }catch (IOException e) {
                 System.out.println(e);
             }
-
+                
             }catch(SQLException e){
                JOptionPane.showMessageDialog(null, "DB conncetion not available" , "Error", JOptionPane.ERROR_MESSAGE );
             }finally {
              conn.close();
             }
-
+            
     }
     }
-
+    
     @FXML
     public void logout() {
         try {                
@@ -202,11 +204,11 @@ public class AddPostController implements Initializable {
                 stage.setTitle("Login");
                 stage.setScene(new Scene(root));
                 stage.show();
-
+                
                 //Close existing window
                 Stage stage1 = (Stage) btnLogout.getScene().getWindow();
                 stage1.hide();
-
+                
             }catch (IOException e) {
                 System.out.println(e);
             }

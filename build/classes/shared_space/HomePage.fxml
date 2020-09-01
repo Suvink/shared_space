@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1400.0" scaleShape="false" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shared_space.HomePageController">
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1400.0" scaleShape="false" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shared_space.HomePageController">
     <children>
         <ImageView fitHeight="94.0" fitWidth="153.0" layoutX="-3.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -24,7 +25,7 @@
                 <Font name="Product Sans" size="14.0" />
             </font>
         </Label>
-        <JFXButton fx:id="btnLogout" layoutX="1307.0" layoutY="25.0" style="-fx-background-color: #f05c63;" text="Logout" textFill="WHITE">
+        <JFXButton fx:id="btnLogout" layoutX="1307.0" layoutY="25.0" onMouseClicked="#logout" style="-fx-background-color: #f05c63;" text="Logout" textFill="WHITE">
             <font>
                 <Font name="Product Sans" size="13.0" />
             </font>
@@ -37,11 +38,7 @@
         </Label>
         <ScrollPane hbarPolicy="NEVER" layoutX="234.0" layoutY="103.0" prefHeight="712.0" prefWidth="913.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" vbarPolicy="NEVER">
             <content>
-                <VBox fx:id="postVbox" style="-fx-background-color: #ffffff; -fx-border-color: #ffffff;">
-                    <children>
-                        <!-- Content Renders here-->
-                    </children>
-                </VBox>
+                <VBox fx:id="postVbox" style="-fx-background-color: #ffffff; -fx-border-color: #ffffff;" />
             </content>
         </ScrollPane>
         <ImageView fitHeight="497.0" fitWidth="104.0" layoutX="51.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true">
@@ -74,5 +71,15 @@
                 <Font name="Product Sans" size="18.0" />
             </font>
         </Label>
+      <AnchorPane layoutX="329.0" layoutY="30.0" />
+      <StackPane layoutX="1157.0" layoutY="755.0" />
+      <JFXButton fx:id="btnAdd" alignment="CENTER" contentDisplay="CENTER" layoutX="1243.0" layoutY="101.0" onAction="#gotoAddPost" prefHeight="43.0" prefWidth="43.0" ripplerFill="#8e0c0ceb" style="-fx-background-color: #8e0c0c;" text="+" textAlignment="CENTER" textFill="#0a0a0a">
+         <font>
+            <Font name="Arial Black" size="29.0" />
+         </font>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+      </JFXButton>
     </children>
 </AnchorPane>
