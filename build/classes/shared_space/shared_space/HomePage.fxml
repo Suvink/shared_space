@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
@@ -12,7 +20,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1400.0" scaleShape="false" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shared_space.HomePageController">
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1400.0" scaleShape="false" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shared_space.HomePageController">
     <children>
         <ImageView fitHeight="94.0" fitWidth="153.0" layoutX="-3.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -73,7 +81,15 @@
         </Label>
       <AnchorPane layoutX="329.0" layoutY="30.0" />
       <StackPane layoutX="1157.0" layoutY="755.0" />
-      <JFXButton fx:id="btnAdd" alignment="CENTER" contentDisplay="CENTER" layoutX="1243.0" layoutY="101.0" onAction="#gotoAddPost" prefHeight="43.0" prefWidth="43.0" ripplerFill="#8e0c0ceb" style="-fx-background-color: #8e0c0c;" text="+" textAlignment="CENTER" textFill="#0a0a0a">
+      <JFXButton fx:id="btnAdd" alignment="CENTER" contentDisplay="CENTER" layoutX="1243.0" layoutY="101.0" onAction="#gotoAddPost" prefHeight="43.0" prefWidth="43.0" ripplerFill="#ffffffeb" style="-fx-background-color: #f05c63;" text="+" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="29.0" />
+         </font>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+      </JFXButton>
+      <JFXButton fx:id="btnEdit" alignment="CENTER" contentDisplay="CENTER" layoutX="1301.0" layoutY="99.0" onAction="#gotoEdit" prefHeight="43.0" prefWidth="43.0" ripplerFill="#ffffffeb" style="-fx-background-color: #f05c63;" text="#" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="29.0" />
          </font>

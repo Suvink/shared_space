@@ -93,9 +93,25 @@ public class HomePageController implements Initializable {
         } catch (IOException e) {
             System.out.println(e);
         }
-        
-        
     }
+    
+    public void gotoEdit(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("PostsEdit.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Edit Post");
+            stage.setScene(new Scene(root));
+            stage.show();
+            // Close existing window
+            Stage stage1 = (Stage) btnAdd.getScene().getWindow();
+            stage1.hide();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+    }
+    
+    
     
     @FXML
     public void logout() {
