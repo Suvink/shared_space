@@ -19,7 +19,7 @@
                 <Image url="@../../img/logo-h.png" />
             </image>
         </ImageView>
-        <Label fx:id="lblUserPicture" layoutX="1114.0" layoutY="17.0" maxHeight="43.0" maxWidth="43.0" prefHeight="43.0" prefWidth="43.0" style="-fx-background-image: url(&quot;https://avatars0.githubusercontent.com/u/10671497?s=460&amp;u=2688fb382fbc91bc1874b4e233e6e58191d017c9&amp;v=4&quot;); -fx-background-size: cover; -fx-border-radius: 5px; -fx-background-radius: 50 50 50 50; -fx-background-repeat: no-repeat; -fx-border-color: black; -fx-shape: &quot;M0 13 C0 5 5 0 13 0 L86 0 C94 0 99 5 99 13 L99 86 C99 94 94 99 86 99 L13 99 C5 99 0 94 0 86Z&quot;; -fx-background-radius: 10px;" />
+        <Label fx:id="lblUserPicture" layoutX="1114.0" layoutY="17.0" maxHeight="43.0" maxWidth="43.0" onMouseClicked="#viewProfile" prefHeight="43.0" prefWidth="43.0" style="-fx-background-image: url(&quot;https://avatars0.githubusercontent.com/u/10671497?s=460&amp;u=2688fb382fbc91bc1874b4e233e6e58191d017c9&amp;v=4&quot;); -fx-background-size: cover; -fx-border-radius: 5px; -fx-background-radius: 50 50 50 50; -fx-background-repeat: no-repeat; -fx-border-color: black; -fx-shape: &quot;M0 13 C0 5 5 0 13 0 L86 0 C94 0 99 5 99 13 L99 86 C99 94 94 99 86 99 L13 99 C5 99 0 94 0 86Z&quot;; -fx-background-radius: 10px;" />
         <Label fx:id="lblUsername" layoutX="1171.0" layoutY="30.0" text="Suvin Nimnaka">
             <font>
                 <Font name="Product Sans" size="14.0" />
@@ -73,7 +73,15 @@
         </Label>
       <AnchorPane layoutX="329.0" layoutY="30.0" />
       <StackPane layoutX="1157.0" layoutY="755.0" />
-      <JFXButton fx:id="btnAdd" alignment="CENTER" contentDisplay="CENTER" layoutX="1243.0" layoutY="101.0" onAction="#gotoAddPost" prefHeight="43.0" prefWidth="43.0" ripplerFill="#8e0c0ceb" style="-fx-background-color: #8e0c0c;" text="+" textAlignment="CENTER" textFill="#0a0a0a">
+      <JFXButton fx:id="btnAdd" alignment="CENTER" contentDisplay="CENTER" layoutX="1243.0" layoutY="101.0" onAction="#gotoAddPost" prefHeight="43.0" prefWidth="43.0" ripplerFill="#ffffffeb" style="-fx-background-color: #f05c63;" text="+" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="29.0" />
+         </font>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+      </JFXButton>
+      <JFXButton fx:id="btnEdit" alignment="CENTER" contentDisplay="CENTER" layoutX="1301.0" layoutY="99.0" onAction="#gotoEdit" prefHeight="43.0" prefWidth="43.0" ripplerFill="#ffffffeb" style="-fx-background-color: #f05c63;" text="#" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="29.0" />
          </font>

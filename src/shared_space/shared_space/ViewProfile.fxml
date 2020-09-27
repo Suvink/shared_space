@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="txt" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shared_space.ViewProfileController">
+    <children>
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="150.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../img/logo.png" />
+            </image>
+        </ImageView>
+        <JFXTextField fx:id="txt_email" focusColor="#76d1e3" layoutX="86.0" layoutY="321.0" prefHeight="28.0" prefWidth="328.0" promptText="Email Address" style="-fx-background-radius: 10px;">
+            <font>
+                <Font name="Product Sans" size="13.0" />
+            </font>
+        </JFXTextField>
+        <JFXButton fx:id="update" alignment="CENTER" buttonType="RAISED" layoutX="93.0" layoutY="499.0" onAction="#updateProfile" prefHeight="27.0" prefWidth="114.0" style="-fx-background-color: #f05c63;" text="Update" textFill="WHITE" />
+        <JFXTextField fx:id="txt_f_name" layoutX="85.0" layoutY="279.0" prefHeight="27.0" prefWidth="152.0" promptText="First Name" />
+        <JFXTextField fx:id="txt_l_name" layoutX="263.0" layoutY="279.0" prefHeight="27.0" prefWidth="152.0" promptText="Last Name" />
+        <JFXPasswordField fx:id="txt_password" layoutX="86.0" layoutY="380.0" prefHeight="25.0" prefWidth="328.0" promptText="Password" />
+        <JFXPasswordField fx:id="txt_conf_password" layoutX="83.0" layoutY="432.0" prefHeight="27.0" prefWidth="328.0" promptText="Confirm Password" />
+      <JFXButton fx:id="delete" alignment="CENTER" buttonType="RAISED" layoutX="263.0" layoutY="499.0" onAction="#deleteProfile" prefHeight="27.0" prefWidth="114.0" style="-fx-background-color: #f05c63;" text="Delete" textFill="WHITE" />
+      <ImageView fx:id="propic" fitHeight="121.0" fitWidth="170.0" layoutX="165.0" layoutY="148.0" onMouseClicked="#changePropic" pickOnBounds="true" preserveRatio="true" />
+    </children>
+</AnchorPane>

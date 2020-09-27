@@ -10,7 +10,7 @@
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
     <jar href="lib\jfoenix-8.0.10.jar" size="2710207" download="eager" />
     <jar href="lib\mysql-connector-java-8.0.20.jar" size="2385601" download="eager" />
-    <jar href="shared_space.jar" size="127839" download="eager" />
+    <jar href="shared_space.jar" size="141774" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="shared_space" >
     <param name="requiredFXVersion" value="8.0+"/>

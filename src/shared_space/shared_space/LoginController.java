@@ -35,9 +35,12 @@ public class LoginController implements Initializable {
     private javafx.scene.control.Label gotoSignUpLabel;
     @FXML
     private com.jfoenix.controls.JFXButton btnlogin;
+    
+    public String user;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
 
     }
 
@@ -57,6 +60,7 @@ public class LoginController implements Initializable {
             ShowMessage("Username or Password cannot be blank!", "Error");
             return;
         }
+        
 
         //DB Driver
         String db_host = "jdbc:mysql://localhost:3306/shared_space";
@@ -77,6 +81,8 @@ public class LoginController implements Initializable {
                 if (rs.getString("email").equals(txtEmail.getText()) && rs.getString("password").equals(txtPassword.getText())) {
                     System.out.println("Correct");
                     //ShowMessage("Correct", "Success");
+                    String userEmail=txtEmail.getText();
+                    setUser(userEmail);
                     this.gotoHome();
                 } else {
                     ShowMessage("Username or Password is invalid!", "Error");
@@ -90,6 +96,13 @@ public class LoginController implements Initializable {
             con.close();
         }
     }
+    
+    public void setUser(String user){
+        ViewProfileController viewUser=new ViewProfileController();
+        viewUser.setEmail(user);
+       
+    }
+ 
 
     public void gotoSignup() throws IOException {
         try {

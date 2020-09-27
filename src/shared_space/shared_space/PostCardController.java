@@ -25,8 +25,7 @@ public class PostCardController extends Pane {
     private Label authorbox;
 
     public PostCardController() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(
-                "postCard.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("postCard.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

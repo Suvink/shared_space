@@ -5,6 +5,7 @@
  */
 package shared_space;
 
+import java.util.Date;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
@@ -40,6 +41,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
+
 
 /**
  * FXML Controller class
@@ -133,6 +135,7 @@ public class AddPostController implements Initializable {
     @FXML
     public void Submit()throws ClassNotFoundException, IOException, SQLException, ParseException {
         
+        
         if(title.getText().isEmpty() || content.getText().isEmpty()||Author.getText().isEmpty()){
           
             JOptionPane.showMessageDialog(null, "You haven't add any posts" , "Error", JOptionPane.ERROR_MESSAGE );
@@ -146,9 +149,10 @@ public class AddPostController implements Initializable {
        
         String pattern = "MM/dd/yyyy HH:mm:ss";
         DateFormat df = new SimpleDateFormat(pattern);
-        java.util.Date today = Calendar.getInstance().getTime();   
+        Date today = Calendar.getInstance().getTime();   
         String todayAsString = df.format(today);
         String img_urls = this.img_url;
+        System.out.println("Img url");
         
         //Database Connectivity
             String DB_URL = "jdbc:mysql://localhost:3306/shared_space";
@@ -159,8 +163,10 @@ public class AddPostController implements Initializable {
             try{     
                 Class.forName("com.mysql.jdbc.Driver");
                 conn = DriverManager.getConnection(DB_URL, USER, PASS);
+                System.out.println("DBcon");
                 Statement stmt = conn.createStatement();
                 String sql="INSERT INTO posts(author,title,body,img_url,timestamp) VALUES('"+author+"','"+head+"','"+body+"','"+img_urls+"','"+todayAsString+"')";
+                System.out.println(sql);
                 stmt.executeUpdate(sql); 
                 System.out.println("Added");
                 
@@ -208,4 +214,3 @@ public class AddPostController implements Initializable {
             }
     }
 }    
-   

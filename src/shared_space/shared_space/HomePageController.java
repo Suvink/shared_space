@@ -17,6 +17,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -35,6 +36,11 @@ public class HomePageController implements Initializable {
     
     @FXML
     private JFXButton btnLogout;
+    
+    @FXML
+    private Label lblUserPicture;
+    
+    
 
     /**
      * Initializes the controller class.
@@ -93,9 +99,25 @@ public class HomePageController implements Initializable {
         } catch (IOException e) {
             System.out.println(e);
         }
-        
-        
     }
+    
+    public void gotoEdit(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("PostsEdit.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Edit Post");
+            stage.setScene(new Scene(root));
+            stage.show();
+            // Close existing window
+            Stage stage1 = (Stage) btnAdd.getScene().getWindow();
+            stage1.hide();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+    }
+    
+    
     
     @FXML
     public void logout() {
@@ -115,6 +137,27 @@ public class HomePageController implements Initializable {
                 System.out.println(e);
             }
     }
+    @FXML
+    public void viewProfile() {
+        
+        try {                
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ViewProfile.fxml"));
+                Parent root = (Parent) fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setTitle("ViewProfile");
+                stage.setScene(new Scene(root));
+                stage.show();
+                
+                //Close existing window
+                Stage stage1 = (Stage) lblUserPicture.getScene().getWindow();
+                stage1.hide();
+                
+            }catch (IOException e) {
+                System.out.println(e);
+            }
+
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
