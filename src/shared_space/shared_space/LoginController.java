@@ -36,6 +36,10 @@ public class LoginController implements Initializable {
     @FXML
     private com.jfoenix.controls.JFXButton btnlogin;
 
+    //Send User Email
+    private String userEmail;
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -74,9 +78,13 @@ public class LoginController implements Initializable {
             System.out.println(sql);
 
             while (rs.next()) {
+                System.out.println("upw  " + txtPassword.getText());
+                System.out.println(rs.getString("password"));
                 if (rs.getString("email").equals(txtEmail.getText()) && rs.getString("password").equals(txtPassword.getText())) {
                     System.out.println("Correct");
                     //ShowMessage("Correct", "Success");
+                    this.userEmail = rs.getString("email");
+                    
                     this.gotoHome();
                 } else {
                     ShowMessage("Username or Password is invalid!", "Error");
@@ -113,6 +121,11 @@ public class LoginController implements Initializable {
         Stage stage = new Stage();
         stage.setTitle("Shared Space");
         stage.setScene(new Scene(root));
+        
+        HomePageController controller = fxmlLoader.getController();
+        System.out.println("Login sending" + this.userEmail);
+        controller.setEmail(this.userEmail);
+        
         stage.show();
 
         // Close existing window
@@ -121,3 +134,6 @@ public class LoginController implements Initializable {
     }
 
 }
+
+
+

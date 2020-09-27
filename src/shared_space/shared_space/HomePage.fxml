@@ -27,7 +27,7 @@
                 <Image url="@../../img/logo-h.png" />
             </image>
         </ImageView>
-        <Label fx:id="lblUserPicture" layoutX="1114.0" layoutY="17.0" maxHeight="43.0" maxWidth="43.0" prefHeight="43.0" prefWidth="43.0" style="-fx-background-image: url(&quot;https://avatars0.githubusercontent.com/u/10671497?s=460&amp;u=2688fb382fbc91bc1874b4e233e6e58191d017c9&amp;v=4&quot;); -fx-background-size: cover; -fx-border-radius: 5px; -fx-background-radius: 50 50 50 50; -fx-background-repeat: no-repeat; -fx-border-color: black; -fx-shape: &quot;M0 13 C0 5 5 0 13 0 L86 0 C94 0 99 5 99 13 L99 86 C99 94 94 99 86 99 L13 99 C5 99 0 94 0 86Z&quot;; -fx-background-radius: 10px;" />
+        <Label fx:id="lblUserPicture" layoutX="1114.0" layoutY="17.0" maxHeight="43.0" maxWidth="43.0" onMouseClicked="#viewProfile" prefHeight="43.0" prefWidth="43.0" style="-fx-background-image: url(&quot;https://www.w3schools.com/w3images/avatar2.png&quot;); -fx-background-size: cover; -fx-border-radius: 5px; -fx-background-radius: 50 50 50 50; -fx-background-repeat: no-repeat; -fx-border-color: black; -fx-shape: &quot;M0 13 C0 5 5 0 13 0 L86 0 C94 0 99 5 99 13 L99 86 C99 94 94 99 86 99 L13 99 C5 99 0 94 0 86Z&quot;; -fx-background-radius: 10px;" />
         <Label fx:id="lblUsername" layoutX="1171.0" layoutY="30.0" text="Suvin Nimnaka">
             <font>
                 <Font name="Product Sans" size="14.0" />
