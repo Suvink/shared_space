@@ -202,7 +202,8 @@ public class PostsEditController implements Initializable {
                 clearFields();
                 refreshTable(this.userEmail);
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e);
+                //JOptionPane.showMessageDialog(null, e);
+                ShowMessage(e.toString(), "Error");
             }
         }
     }
@@ -229,7 +230,8 @@ public class PostsEditController implements Initializable {
                 ShowMessage("Record updated Sucessfully!", "Success");
                 refreshTable(this.userEmail);
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e);
+                //JOptionPane.showMessageDialog(null, e);
+                ShowMessage(e.toString(), "Error");
             }
         }
     }

@@ -9,6 +9,7 @@ import java.util.Date;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
+import java.awt.EventQueue;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -40,6 +41,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -91,7 +93,19 @@ public class AddPostController implements Initializable {
     public void setEmail(String email) {
         this.userEmail = email;
     }
-
+    
+    
+    private void ShowMessage(String message, String title) {
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                ImageIcon icon = new ImageIcon("notification.png");
+                JOptionPane.showMessageDialog(null, message, title, JOptionPane.PLAIN_MESSAGE, icon);
+            }
+        });
+    }
+    
+    
     @FXML
     private void Reset() {
 
@@ -132,7 +146,8 @@ public class AddPostController implements Initializable {
             this.img_url = imagepath;
 
         } else {
-            JOptionPane.showMessageDialog(null, "Image not found", "Error", JOptionPane.ERROR_MESSAGE);
+            //JOptionPane.showMessageDialog(null, "Image not found", "Error", JOptionPane.ERROR_MESSAGE);
+            ShowMessage("Image not found", "Error");
         }
     }
 
@@ -141,7 +156,8 @@ public class AddPostController implements Initializable {
 
         if (title.getText().isEmpty() || content.getText().isEmpty() || Author.getText().isEmpty()) {
 
-            JOptionPane.showMessageDialog(null, "You haven't add any posts", "Error", JOptionPane.ERROR_MESSAGE);
+            //JOptionPane.showMessageDialog(null, "You haven't add any posts", "Error", JOptionPane.ERROR_MESSAGE);
+            ShowMessage("You haven't add any posts!", "Error");
 
         } else {
             String head = title.getText();
@@ -190,7 +206,8 @@ public class AddPostController implements Initializable {
                 }
 
             } catch (SQLException e) {
-                JOptionPane.showMessageDialog(null, "DB conncetion not available", "Error", JOptionPane.ERROR_MESSAGE);
+                //JOptionPane.showMessageDialog(null, "DB conncetion not available", "Error", JOptionPane.ERROR_MESSAGE);
+                ShowMessage("DB conncetion not available!", "Error");
             } finally {
                 conn.close();
             }

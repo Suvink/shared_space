@@ -174,7 +174,8 @@ public class ViewProfileController implements Initializable {
             //clearFields();
             //refreshTable();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
+            //JOptionPane.showMessageDialog(null, e);
+            ShowMessage(e.toString(), "Error");
         }
 
     }
@@ -218,7 +219,8 @@ public class ViewProfileController implements Initializable {
             stage1.hide();
             //refreshTable();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
+            //JOptionPane.showMessageDialog(null, e);
+            ShowMessage(e.toString(), "Error");
         }
 
     }
